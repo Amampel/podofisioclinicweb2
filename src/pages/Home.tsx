@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, ShieldCheck, Microscope, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import SEO from '../components/SEO';
 
 const stats = [
   { label: 'Años de Experiencia', value: '15+' },
@@ -13,6 +14,10 @@ const stats = [
 export default function Home() {
   return (
     <div className="animate-in fade-in duration-700">
+      <SEO 
+        title="PODOFISIO CLINIC Terrassa | Especialistas en Extremidad Inferior"
+        description="Clínica en Terrassa especializada en fisioterapia invasiva y podología para la extremidad inferior. Biomecánica digital y recuperación avanzada."
+      />
       <Hero />
 
       {/* Philosophy Section */}
