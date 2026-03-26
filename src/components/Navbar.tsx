@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link 
-              key={link.name}
+              key={`desktop-${link.name}`}
               to={link.href}
               className={cn(
                 "font-headline font-bold tracking-tight text-xs uppercase transition-colors",
@@ -73,7 +73,7 @@ export default function Navbar() {
         >
           {navLinks.map((link) => (
             <Link 
-              key={link.name}
+              key={`mobile-${link.name}`}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(

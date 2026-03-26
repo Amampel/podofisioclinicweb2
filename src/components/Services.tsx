@@ -1,7 +1,7 @@
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation, useMotionValue } from 'motion/react';
 import { ArrowRight, Activity, Zap, Radio, Footprints, Scan } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const services = [
   {
@@ -44,24 +44,75 @@ const services = [
 
 export default function Services() {
   const controls = useAnimation();
+  const x = useMotionValue(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const startAnimation = async () => {
-    await controls.start({
-      x: [0, -2844],
-      transition: {
-        duration: 40,
-        ease: "linear",
-        repeat: Infinity,
-      },
-    });
+  // Width of one set of services (6 items * (450px + 24px gap))
+  // On mobile it's (320px + 24px gap)
+  const [itemWidth, setItemWidth] = useState(474);
+  
+  useEffect(() => {
+    const updateWidth = () => {
+      if (window.innerWidth < 768) {
+        setItemWidth(320 + 24);
+      } else {
+        setItemWidth(450 + 24);
+      }
+    };
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  const loopWidth = itemWidth * services.length;
+
+  const startAnimation = async (currentX: number) => {
+    if (isDragging) return;
+
+    // Normalize currentX to be within [0, -loopWidth]
+    let startX = currentX % loopWidth;
+    if (startX > 0) startX -= loopWidth;
+
+    const remainingDistance = Math.abs(-loopWidth - startX);
+    const duration = 40 * (remainingDistance / loopWidth);
+
+    try {
+      await controls.start({
+        x: [startX, -loopWidth],
+        transition: {
+          duration: duration,
+          ease: "linear",
+        },
+      });
+
+      // Recursive loop
+      if (!isDragging) {
+        startAnimation(0);
+      }
+    } catch (e) {
+      // Animation was stopped, which is fine
+    }
   };
 
   useEffect(() => {
-    startAnimation();
-  }, []);
+    startAnimation(0);
+    return () => controls.stop();
+  }, [loopWidth]);
+
+  const handleDragStart = () => {
+    setIsDragging(true);
+    controls.stop();
+  };
+
+  const handleDragEnd = (_: any, info: any) => {
+    setIsDragging(false);
+    const currentX = x.get();
+    startAnimation(currentX);
+  };
 
   return (
-    <section className="py-32 bg-surface-lowest relative">
+    <section className="py-32 bg-surface-lowest relative overflow-hidden">
       <div className="px-8 max-w-7xl mx-auto mb-16">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -80,20 +131,19 @@ export default function Services() {
         </motion.div>
       </div>
 
-      <div className="overflow-hidden py-12 px-8">
+      <div className="py-12 px-8" ref={containerRef}>
         <motion.div 
           drag="x"
-          dragConstraints={{ left: -5688, right: 0 }}
+          dragConstraints={{ left: -loopWidth * 2, right: 0 }}
+          style={{ x, cursor: isDragging ? 'grabbing' : 'grab' }}
           animate={controls}
-          onDragStart={() => controls.stop()}
-          onDragEnd={() => startAnimation()}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
           className="flex gap-6 w-max"
-          style={{ cursor: 'grab' }}
-          whileTap={{ cursor: 'grabbing' }}
         >
           {[...services, ...services, ...services].map((service, index) => (
             <div 
-              key={`${service.title}-${index}`}
+              key={`service-carousel-${index}-${service.title}`}
               className="w-[320px] md:w-[450px] aspect-[4/5] glass-card rounded-xl p-8 flex flex-col justify-between group relative overflow-hidden select-none flex-shrink-0"
             >
               <img 
@@ -162,7 +212,7 @@ export default function Services() {
                 { num: '03', title: 'Laboratorio Biomecánico', desc: 'Sistemas de captura de movimiento y presiones para un análisis dinámico real.' }
               ].map((item, idx) => (
                 <motion.div 
-                  key={item.num}
+                  key={`tech-${idx}-${item.num}`}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.15, duration: 0.6 }}

@@ -76,8 +76,8 @@ export default function Contact() {
                   { day: 'Viernes', hours: '09:00 - 18:00' },
                   { day: 'Sábado', hours: 'Cerrado' },
                   { day: 'Domingo', hours: 'Cerrado' }
-                ].map((item) => (
-                  <div key={item.day} className="flex justify-between items-center text-sm">
+                ].map((item, idx) => (
+                  <div key={`hours-${idx}-${item.day}`} className="flex justify-between items-center text-sm">
                     <span className="text-on-surface-variant font-light">{item.day}</span>
                     <span className="text-white font-bold">{item.hours}</span>
                   </div>

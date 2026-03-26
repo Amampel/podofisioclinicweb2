@@ -42,7 +42,7 @@ export default function Pricing() {
                   { title: 'Pack 10 sesiones', price: '550€', perSession: '55€ / SESIÓN', desc: 'Mantenimiento preventivo y optimización a largo plazo.', badge: 'Mejor Valor' }
                 ].map((item, idx) => (
                   <motion.div 
-                    key={item.title}
+                    key={`fisioterapia-${idx}-${item.title}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
@@ -90,7 +90,7 @@ export default function Pricing() {
                 { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: '200€ por canal / 350€ por 2 canales.' }
               ].map((item, idx) => (
                 <motion.div 
-                  key={item.name}
+                  key={`podologia-${idx}-${item.name}`}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
@@ -142,7 +142,7 @@ export default function Pricing() {
               { q: '¿Es necesario pedir cita previa?', a: 'Sí, para garantizar la excelencia en el trato y evitar esperas, funcionamos exclusivamente mediante cita previa.' }
             ].map((faq, i) => (
               <motion.div 
-                key={i}
+                key={`faq-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
