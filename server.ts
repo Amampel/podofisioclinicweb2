@@ -48,9 +48,10 @@ async function createServer() {
       const { html: appHtml, head: headHtml } = await render(url);
 
       // 5. Inject the app-rendered HTML into the template.
+      // We use a regex to be more robust against whitespace variations
       const html = template
-        .replace(`<!--head-outlet-->`, headHtml)
-        .replace(`<!--ssr-outlet-->`, appHtml);
+        .replace(/<!--head-outlet-->/, headHtml)
+        .replace(/<!--ssr-outlet-->/, appHtml);
 
       // 6. Send the rendered HTML back.
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
