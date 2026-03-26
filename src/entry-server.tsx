@@ -21,10 +21,11 @@ export function render(url: string) {
 
   return {
     html,
-    head: `
-      ${helmet.title.toString()}
-      ${helmet.meta.toString()}
-      ${helmet.link.toString()}
-    `
+    head: helmet ? `
+      ${helmet.title?.toString() || ''}
+      ${helmet.meta?.toString() || ''}
+      ${helmet.link?.toString() || ''}
+      ${helmet.script?.toString() || ''}
+    ` : ''
   };
 }
