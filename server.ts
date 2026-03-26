@@ -6,10 +6,12 @@ import { createServer as createViteServer } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const isProd = process.env.NODE_ENV === 'production';
+const root = process.cwd();
+
 async function createServer() {
   const app = express();
-  const port = 3000;
-  const isProd = process.env.NODE_ENV === 'production';
+  const port = process.env.PORT || 3000;
 
   let vite: any;
   if (!isProd) {
@@ -19,7 +21,7 @@ async function createServer() {
     });
     app.use(vite.middlewares);
   } else {
-    app.use(express.static(path.resolve(__dirname, 'dist/client'), { index: false }));
+    app.use(express.static(path.resolve(root, 'dist/client'), { index: false }));
   }
 
   app.use('*', async (req, res, next) => {
@@ -30,12 +32,13 @@ async function createServer() {
       let render: any;
 
       if (!isProd) {
-        template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        template = fs.readFileSync(path.resolve(root, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
         render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render;
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, 'dist/client/index.html'), 'utf-8');
-        render = (await import('./dist/server/entry-server.js')).render;
+        template = fs.readFileSync(path.resolve(root, 'dist/client/index.html'), 'utf-8');
+        const renderPath = path.resolve(root, 'dist/server/entry-server.js');
+        render = (await import(renderPath)).render;
       }
 
       const { html: appHtml, head: headHtml } = await render(url);
@@ -47,13 +50,18 @@ async function createServer() {
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
     } catch (e) {
       if (!isProd) vite.ssrFixStacktrace(e as Error);
-      next(e);
+      console.error(e);
+      res.status(500).end(isProd ? 'Internal Server Error' : (e as Error).stack);
     }
   });
 
-  app.listen(port, '0.0.0.0', () => {
-    console.log(`Server running at http://localhost:${port}`);
-  });
+  if (!isProd) {
+    app.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}`);
+    });
+  }
+  
+  return app;
 }
 
-createServer();
+export default createServer();
