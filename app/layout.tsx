@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../src/index.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
@@ -47,6 +48,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <FloatingActions />
+          <SpeedInsights />
         </div>
       </body>
     </html>
