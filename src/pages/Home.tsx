@@ -14,8 +14,8 @@ const stats = [
 export default function Home() {
   return (
     <div className="animate-in fade-in duration-700">
-      <SEO 
-        title="PODOFISIO CLINIC Terrassa | Especialistas en Extremidad Inferior"
+      <SEO
+        title="Podofisio Clinic Terrassa | Especialistas en Extremidad Inferior"
         description="Clínica en Terrassa especializada en fisioterapia invasiva y podología para la extremidad inferior. Biomecánica digital y recuperación avanzada."
       />
       <Hero />
@@ -35,7 +35,7 @@ export default function Home() {
                 Ciencia, <span className="text-secondary">Tecnología</span> y Humanidad.
               </h2>
               <p className="text-on-surface-variant text-lg font-light leading-relaxed mb-10">
-                En PODOFISIO CLINIC entendemos que cada paso cuenta. No solo tratamos el pie, sino la biomecánica completa de tu cuerpo. Nuestro enfoque multidisciplinar combina la podología deportiva con la fisioterapia avanzada para garantizar una recuperación real y duradera.
+                En Podofisio Clinic entendemos que cada paso cuenta. No solo tratamos el pie, sino la biomecánica completa de tu cuerpo. Nuestro enfoque multidisciplinar combina la podología deportiva con la fisioterapia avanzada para garantizar una recuperación real y duradera.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="flex items-start gap-4">
@@ -66,8 +66,8 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
-                <img 
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop"
                   alt="Clinical Excellence"
                   className="w-full h-full object-cover grayscale opacity-60 hover:scale-105 transition-transform duration-1000"
                   referrerPolicy="no-referrer"
@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* Quick Services CTA */}
       <section className="py-32 bg-surface-lowest">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -116,14 +116,14 @@ export default function Home() {
             ¿Listo para volver a <span className="text-secondary">moverte sin dolor?</span>
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link 
-              to="/servicios" 
+            <Link
+              to="/servicios"
               className="bg-white text-background px-12 py-5 rounded-xl font-headline font-extrabold uppercase tracking-widest text-xs hover:bg-secondary transition-all flex items-center justify-center gap-3"
             >
               Explorar Servicios <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link 
-              to="/contacto" 
+            <Link
+              to="/contacto"
               className="border border-white/10 text-white px-12 py-5 rounded-xl font-headline font-extrabold uppercase tracking-widest text-xs hover:bg-white/5 transition-all"
             >
               Reservar Cita

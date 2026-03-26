@@ -7,20 +7,20 @@ interface SEOProps {
   ogImage?: string;
 }
 
-export default function SEO({ 
-  title = "PODOFISIO CLINIC Terrassa | Especialistas en Extremidad Inferior", 
+export default function SEO({
+  title = "Podofisio Clinic Terrassa | Especialistas en Extremidad Inferior",
   description = "Clínica en Terrassa especializada en fisioterapia invasiva y podología para la extremidad inferior. Biomecánica digital y recuperación avanzada.",
   canonical = "https://podofisioclinic.com/",
   ogImage = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop"
 }: SEOProps) {
-  const fullTitle = title.includes("PODOFISIO CLINIC") ? title : `${title} | PODOFISIO CLINIC`;
+  const fullTitle = title.includes("Podofisio Clinic") ? title : `${title} | Podofisio Clinic`;
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
-      
+
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -39,7 +39,7 @@ export default function SEO({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          "name": "PODOFISIO CLINIC",
+          "name": "Podofisio Clinic",
           "image": ogImage,
           "@id": "https://podofisioclinic.com/",
           "url": "https://podofisioclinic.com/",

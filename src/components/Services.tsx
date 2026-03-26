@@ -51,7 +51,7 @@ export default function Services() {
   // Width of one set of services (6 items * (450px + 24px gap))
   // On mobile it's (320px + 24px gap)
   const [itemWidth, setItemWidth] = useState(474);
-  
+
   useEffect(() => {
     const updateWidth = () => {
       if (window.innerWidth < 768) {
@@ -114,7 +114,7 @@ export default function Services() {
   return (
     <section className="py-32 bg-surface-lowest relative overflow-hidden">
       <div className="px-8 max-w-7xl mx-auto mb-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -125,14 +125,14 @@ export default function Services() {
             <span className="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant block mb-2">Especialización en Extremidad Inferior</span>
             <h2 className="font-headline text-4xl md:text-6xl font-bold text-white tracking-tight">Servicios de <span className="text-secondary">Alta Resolución</span></h2>
             <p className="mt-6 text-on-surface-variant font-light text-lg">
-              En PODOFISIO CLINIC no solo tratamos síntomas; buscamos el origen biomecánico de tu patología. Nuestra metodología combina la fisioterapia invasiva con la podología deportiva para ofrecerte un abordaje integral 360º.
+              En Podofisio Clinic no solo tratamos síntomas; buscamos el origen biomecánico de tu patología. Nuestra metodología combina la fisioterapia invasiva con la podología deportiva para ofrecerte un abordaje integral 360º.
             </p>
           </div>
         </motion.div>
       </div>
 
       <div className="py-12 px-8" ref={containerRef}>
-        <motion.div 
+        <motion.div
           drag="x"
           dragConstraints={{ left: -loopWidth * 2, right: 0 }}
           style={{ x, cursor: isDragging ? 'grabbing' : 'grab' }}
@@ -142,18 +142,18 @@ export default function Services() {
           className="flex gap-6 w-max"
         >
           {[...services, ...services, ...services].map((service, index) => (
-            <div 
+            <div
               key={`service-carousel-${index}-${service.title}`}
               className="w-[320px] md:w-[450px] aspect-[4/5] glass-card rounded-xl p-8 flex flex-col justify-between group relative overflow-hidden select-none flex-shrink-0"
             >
-              <img 
-                src={service.image} 
+              <img
+                src={service.image}
                 alt={service.title}
                 className="absolute inset-0 w-full h-full object-cover opacity-10 transition-transform duration-700 group-hover:scale-110 grayscale pointer-events-none"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10 pointer-events-none" />
-              
+
               <div className="relative z-20 flex flex-col justify-between h-full pointer-events-none">
                 <div>
                   <div className="w-14 h-14 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center mb-8 group-hover:bg-secondary/20 group-hover:border-secondary/40 transition-all duration-500">
@@ -162,7 +162,7 @@ export default function Services() {
                   <h3 className="font-headline text-2xl md:text-3xl font-bold text-white mb-6">{service.title}</h3>
                   <p className="text-neutral-400 font-light leading-relaxed text-base">{service.description}</p>
                 </div>
-                
+
                 <Link to="/contacto" className="text-white font-bold text-xs uppercase tracking-widest flex items-center gap-3 group-hover:gap-5 transition-all pointer-events-auto">
                   Solicitar información <ArrowRight className="w-4 h-4 text-secondary" />
                 </Link>
@@ -175,7 +175,7 @@ export default function Services() {
       {/* Technology Section */}
       <div className="max-w-7xl mx-auto px-8 mt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -183,9 +183,9 @@ export default function Services() {
             className="relative"
           >
             <div className="aspect-square rounded-2xl overflow-hidden border border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" 
-                alt="Technology" 
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                alt="Technology"
                 className="w-full h-full object-cover grayscale opacity-50"
                 referrerPolicy="no-referrer"
               />
@@ -196,7 +196,7 @@ export default function Services() {
             </div>
           </motion.div>
           <div>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -211,7 +211,7 @@ export default function Services() {
                 { num: '02', title: 'Terapias Invasivas', desc: 'EPI y EPTE para regenerar tejidos donde las terapias manuales no llegan.' },
                 { num: '03', title: 'Laboratorio Biomecánico', desc: 'Sistemas de captura de movimiento y presiones para un análisis dinámico real.' }
               ].map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={`tech-${idx}-${item.num}`}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}

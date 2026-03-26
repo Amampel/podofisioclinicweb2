@@ -6,7 +6,7 @@ export default function Pricing() {
   return (
     <section className="py-32 bg-surface-lowest">
       <div className="max-w-7xl mx-auto px-8">
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -16,13 +16,13 @@ export default function Pricing() {
           <span className="inline-block text-on-surface-variant font-label text-xs uppercase tracking-[0.3em] mb-4">Transparencia y Valor</span>
           <h2 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-white mb-8">Inversión en tu <span className="text-secondary">Bienestar</span></h2>
           <p className="max-w-3xl mx-auto text-on-surface-variant text-lg leading-relaxed font-light">
-            En PODOFISIO CLINIC creemos en la claridad absoluta. Nuestras tarifas reflejan la alta especialización de nuestro equipo, el uso de tecnología de vanguardia y el tiempo dedicado a cada paciente para asegurar resultados definitivos.
+            En Podofisio Clinic creemos en la claridad absoluta. Nuestras tarifas reflejan la alta especialización de nuestro equipo, el uso de tecnología de vanguardia y el tiempo dedicado a cada paciente para asegurar resultados definitivos.
           </p>
         </motion.header>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Fisioterapia */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -41,7 +41,7 @@ export default function Pricing() {
                   { title: 'Pack 5 sesiones', price: '300€', perSession: '60€ / SESIÓN', desc: 'Bono de recuperación para procesos de rehabilitación media.' },
                   { title: 'Pack 10 sesiones', price: '550€', perSession: '55€ / SESIÓN', desc: 'Mantenimiento preventivo y optimización a largo plazo.', badge: 'Mejor Valor' }
                 ].map((item, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={`fisioterapia-${idx}-${item.title}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Pricing() {
           </motion.div>
 
           {/* Podología */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -89,7 +89,7 @@ export default function Pricing() {
                 { name: 'PRP (Factores de Crecimiento)', price: '300€', desc: 'Tratamiento biológico regenerativo.' },
                 { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: '200€ por canal / 350€ por 2 canales.' }
               ].map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={`podologia-${idx}-${item.name}`}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -107,8 +107,8 @@ export default function Pricing() {
                   <div className="h-px w-full bg-linear-to-r from-white/10 to-transparent mt-4" />
                 </motion.div>
               ))}
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -126,7 +126,7 @@ export default function Pricing() {
 
         {/* FAQ Section */}
         <div className="mt-40 max-w-4xl mx-auto">
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -141,7 +141,7 @@ export default function Pricing() {
               { q: '¿Caducan los bonos de sesiones?', a: 'No, nuestros bonos no tienen fecha de caducidad. Puedes utilizarlos según tus necesidades de recuperación o mantenimiento.' },
               { q: '¿Es necesario pedir cita previa?', a: 'Sí, para garantizar la excelencia en el trato y evitar esperas, funcionamos exclusivamente mediante cita previa.' }
             ].map((faq, i) => (
-              <motion.div 
+              <motion.div
                 key={`faq-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

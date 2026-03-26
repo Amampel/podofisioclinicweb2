@@ -8,20 +8,20 @@ export default function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background z-10" />
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          autoPlay
+          muted
+          loop
           playsInline
           className="w-full h-full object-cover opacity-30 grayscale contrast-125"
         >
-          <source 
-            src="https://podofisioclinic.com/wp-content/uploads/2026/03/5794352_Coll_wavebreak_Physio_1920x1080.mp4" 
-            type="video/mp4" 
+          <source
+            src="https://podofisioclinic.com/wp-content/uploads/2026/03/5794352_Coll_wavebreak_Physio_1920x1080.mp4"
+            type="video/mp4"
           />
           {/* Fallback image if video fails */}
-          <img 
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
             alt="Clinical background"
             className="w-full h-full object-cover"
           />
@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-20 text-center max-w-5xl px-6 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -40,7 +40,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,16 +50,16 @@ export default function Hero() {
           <span className="text-secondary">en cada paso.</span>
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="font-body text-base md:text-xl text-on-surface-variant max-w-3xl mx-auto mb-10 md:mb-12 font-light leading-relaxed"
         >
-          En PODOFISIO CLINIC, fusionamos la tecnología médica más avanzada con un trato humano excepcional para ofrecerte soluciones definitivas en la salud de tus pies y extremidad inferior.
+          En Podofisio Clinic, fusionamos la tecnología médica más avanzada con un trato humano excepcional para ofrecerte soluciones definitivas en la salud de tus pies y extremidad inferior.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
         transition={{ delay: 1.5, duration: 1 }}
