@@ -19,13 +19,15 @@ export function render(url: string) {
 
   const { helmet } = helmetContext;
 
+  const head = helmet ? [
+    helmet.title?.toString(),
+    helmet.meta?.toString(),
+    helmet.link?.toString(),
+    helmet.script?.toString(),
+  ].filter(Boolean).join('\n') : '';
+
   return {
     html,
-    head: helmet ? `
-      ${helmet.title?.toString() || ''}
-      ${helmet.meta?.toString() || ''}
-      ${helmet.link?.toString() || ''}
-      ${helmet.script?.toString() || ''}
-    ` : ''
+    head
   };
 }

@@ -53,9 +53,22 @@ app.use('*', async (req, res, next) => {
 
     const { html: appHtml, head: headHtml } = await render(url);
 
-    const html = template
-      .replace(/<!--head-outlet-->/, headHtml)
-      .replace(/<!--ssr-outlet-->/, appHtml);
+    let html = template;
+    
+    // Inject Head tags
+    if (html.includes('<!--head-outlet-->')) {
+      html = html.replace('<!--head-outlet-->', headHtml);
+    } else {
+      html = html.replace('</head>', `${headHtml}</head>`);
+    }
+
+    // Inject App HTML
+    if (html.includes('<!--ssr-outlet-->')) {
+      html = html.replace('<!--ssr-outlet-->', appHtml);
+    } else {
+      // Fallback if marker is missing (though it should be there in index.html)
+      html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+    }
 
     res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
   } catch (e) {
