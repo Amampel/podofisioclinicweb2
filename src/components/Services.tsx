@@ -308,8 +308,8 @@ export default function Services() {
             </div>
             
             <motion.div
-              initial={{ opacity: 0, w: 0 }}
-              whileInView={{ opacity: 1, w: "100%" }}
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: "100%" }}
               transition={{ delay: 0.8, duration: 1 }}
               className="h-px bg-gradient-to-r from-secondary/50 to-transparent mt-12 mb-8 max-w-md"
             />
