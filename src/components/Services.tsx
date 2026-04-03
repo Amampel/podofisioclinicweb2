@@ -7,36 +7,42 @@ import { useEffect, useRef, useState } from 'react';
 const services = [
   {
     title: 'Ecografía Clínica',
+    slug: 'ecografia-clinica',
     description: 'Diagnóstico por imagen de alta resolución para identificar patologías musculoesqueléticas en tiempo real, permitiendo tratamientos guiados de máxima precisión.',
     icon: Scan,
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop',
   },
   {
     title: 'EPI / EPTE Guiada',
+    slug: 'epi-epte-guiada',
     description: 'Electrólisis Percutánea Intratisular para el tratamiento de tendinopatías crónicas y regeneración acelerada de tejidos blandos bajo control ecográfico.',
     icon: Zap,
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop',
   },
   {
     title: 'Radiofrecuencia Indiba',
+    slug: 'radiofrecuencia-indiba',
     description: 'Tecnología de transferencia eléctrica capacitiva y resistiva que acelera los mecanismos naturales de reparación del tejido y reduce el dolor.',
     icon: Radio,
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
   },
   {
     title: 'Biomecánica Digital',
+    slug: 'biomecanica-digital',
     description: 'Análisis computerizado de la marcha y la pisada mediante plataformas de presiones y sensores inerciales para optimizar el rendimiento y prevenir lesiones.',
     icon: Activity,
     image: 'https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?q=80&w=2070&auto=format&fit=crop',
   },
   {
     title: 'Plantillas 3D Élite',
+    slug: 'plantillas-3d-elite',
     description: 'Diseño y fabricación aditiva de soportes plantares personalizados utilizando materiales de última generación para una respuesta biomecánica perfecta.',
     icon: Footprints,
     image: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=2070&auto=format&fit=crop',
   },
   {
     title: 'Cirugía Ungueal',
+    slug: 'cirugia-ungueal',
     description: 'Procedimientos de cirugía menor ambulatoria para la resolución definitiva de uñas encarnadas y otras patologías dérmicas con mínima recuperación.',
     icon: ArrowRight,
     image: 'https://images.unsplash.com/photo-1579154235602-3c20fa4f597e?q=80&w=2070&auto=format&fit=crop',
@@ -177,9 +183,9 @@ export default function Services() {
                 onMouseEnter={() => setHoveredIndex(index % services.length)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <Link 
-                  href="/contacto" 
-                  className="block w-full h-full" 
+                <Link
+                  href={`/servicios/${service.slug}`}
+                  className="block w-full h-full"
                   draggable={false}
                   onDragStart={(e) => e.preventDefault()}
                   onClick={(e) => {

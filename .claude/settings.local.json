@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls -la /c/Users/adria/Desktop/podofisioclinicweb2/app/*/)"
+      "Bash(ls -la /c/Users/adria/Desktop/podofisioclinicweb2/app/*/)",
+      "WebSearch",
+      "WebFetch(domain:developers.google.com)"
     ]
   }
 }
