@@ -59,8 +59,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-headline text-4xl sm:text-5xl md:text-8xl font-extrabold tracking-tighter text-white mb-6 md:mb-8 leading-[1] md:leading-[0.9] text-glow"
         >
-          Excelencia clínica <br className="hidden md:block" />
-          <span className="text-secondary">en cada paso.</span>
+          Tu podólogo y fisioterapeuta<br className="hidden md:block" />
+          {" "}en <span className="text-secondary">Terrassa.</span>
         </motion.h1>
 
         <motion.p
