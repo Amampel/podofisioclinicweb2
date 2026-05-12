@@ -3,7 +3,9 @@
     "allow": [
       "Bash(ls -la /c/Users/adria/Desktop/podofisioclinicweb2/app/*/)",
       "WebSearch",
-      "WebFetch(domain:developers.google.com)"
+      "WebFetch(domain:developers.google.com)",
+      "Bash(git config *)",
+      "Bash(gh auth *)"
     ]
   }
 }
