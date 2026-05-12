@@ -29,7 +29,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="text-sm text-neutral-400">Plaça de Mossèn Jacint Verdaguer, 1, Terrassa</li>
               <li className="text-sm text-neutral-400">+34 624 57 87 54</li>
-              <li className="text-sm text-neutral-400">info@podofisioclinic.com</li>
+              <li className="text-sm text-neutral-400">podofisioclinic@gmail.com</li>
             </ul>
           </div>
 

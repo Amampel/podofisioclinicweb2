@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-headline font-bold text-white mb-2 text-xl">Email</h3>
-                  <p className="text-on-surface-variant text-base font-light">info@podofisioclinic.com</p>
+                  <p className="text-on-surface-variant text-base font-light">podofisioclinic@gmail.com</p>
                 </div>
               </div>
             </motion.div>

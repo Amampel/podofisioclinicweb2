@@ -70,7 +70,7 @@ const jsonLd = {
   logo: "https://www.podofisioclinic.com/assets/images/podofisio_logo.png",
   image: "https://www.podofisioclinic.com/og-image.jpg",
   telephone: "+34624578754",
-  email: "info@podofisioclinic.com",
+  email: "podofisioclinic@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Plaça de Mossèn Jacint Verdaguer, 1",

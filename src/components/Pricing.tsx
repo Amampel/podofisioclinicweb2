@@ -38,9 +38,7 @@ export default function Pricing() {
               <div className="space-y-12">
                 {[
                   { title: 'Diagnóstico inicial + Tratamiento', price: '70€', desc: 'Valoración inicial exhaustiva, diagnóstico y primer tratamiento manual o tecnológico.' },
-                  { title: 'Sesiones de Seguimiento', price: '65€', desc: 'Continuación del plan de tratamiento personalizado. 55 min.' },
                   { title: 'Pack 5 sesiones', price: '325€', perSession: '65€ / SESIÓN', desc: 'Bono de recuperación para procesos de rehabilitación media.', badge: 'Mejor Valor' },
-                  { title: 'Pack 10 sesiones', price: '550€', perSession: '55€ / SESIÓN', desc: 'Mantenimiento preventivo y optimización a largo plazo.' },
                   { title: 'Infiltraciones', price: '70€', desc: 'Infiltración ecoguiada para tendinopatías y procesos inflamatorios localizados.' }
                 ].map((item, idx, arr) => (
                   <motion.div
@@ -86,7 +84,7 @@ export default function Pricing() {
               {[
                 { name: 'Visita Podológica', price: '50€', desc: 'Consulta inicial y diagnóstico.' },
                 { name: 'Quiropodia', price: '35€', desc: 'Tratamiento integral de piel y uñas.' },
-                { name: 'Estudio Biomecánico', price: '50€ / 70€', desc: '50€ sin plantillas / 70€ con plantillas.' },
+                { name: 'Estudio Biomecánico', price: '70€ / 50€', desc: '70€ sin plantillas / 50€ con plantillas.' },
                 { name: 'Plantillas Personalizadas', price: '200€', desc: 'Fabricación con materiales técnicos.' },
                 { name: 'PRP (Factores de Crecimiento)', price: '300€', desc: 'Tratamiento biológico regenerativo.' },
                 { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: 'Resolución definitiva con anestesia local.' }
