@@ -1,12 +1,45 @@
 "use client";
 import { motion } from 'motion/react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Check, AlertCircle, Loader2 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus('loading');
+    setErrorMessage('');
+    const formData = new FormData(form);
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => { payload[key] = String(value); });
+    payload.subject = `Nueva solicitud de cita — ${payload.servicio ?? 'sin servicio'}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+        setErrorMessage(data.message ?? 'No se pudo enviar. Inténtalo de nuevo o llámanos.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMessage('Error de conexión. Inténtalo de nuevo o llámanos.');
+    }
+  }
+
   return (
     <section className="py-32 bg-surface-lowest">
       <div className="max-w-7xl mx-auto px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -21,9 +54,8 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Info & Hours */}
           <div className="lg:col-span-5 space-y-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -60,8 +92,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Business Hours */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -86,7 +117,6 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Map */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -115,8 +145,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          {/* Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -126,24 +155,25 @@ export default function Contact() {
             <div className="p-12 rounded-2xl glass-card border border-white/5 relative">
               <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-secondary/40 to-transparent" />
               <h3 className="font-headline text-3xl font-bold text-white mb-10">Solicitud de Cita</h3>
-              <form className="space-y-10">
+              <form onSubmit={handleSubmit} className="space-y-10">
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-3">
                     <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Nombre Completo</label>
-                    <input type="text" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="Ej. Juan Pérez" />
+                    <input type="text" name="nombre" required className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="Ej. Juan Pérez" />
                   </div>
                   <div className="space-y-3">
                     <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Teléfono de contacto</label>
-                    <input type="tel" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="Ej. +34 600 000 000" />
+                    <input type="tel" name="telefono" required className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="Ej. +34 600 000 000" />
                   </div>
                 </div>
                 <div className="space-y-3">
                   <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Correo Electrónico</label>
-                  <input type="email" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="tu@email.com" />
+                  <input type="email" name="email" required className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light" placeholder="tu@email.com" />
                 </div>
                 <div className="space-y-3">
                   <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Servicio Requerido</label>
-                  <select defaultValue="" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 appearance-none font-light cursor-pointer">
+                  <select name="servicio" required defaultValue="" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 appearance-none font-light cursor-pointer">
                     <option value="" disabled className="bg-surface">Selecciona una opción</option>
                     <optgroup label="Fisioterapia Avanzada" className="bg-surface">
                       <option className="bg-surface">Sesión de fisioterapia</option>
@@ -165,12 +195,30 @@ export default function Contact() {
                 </div>
                 <div className="space-y-3">
                   <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Información Adicional</label>
-                  <textarea rows={4} className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light resize-none" placeholder="Cuéntanos brevemente el motivo de tu consulta..."></textarea>
+                  <textarea name="mensaje" rows={4} className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 placeholder:text-neutral-700 font-light resize-none" placeholder="Cuéntanos brevemente el motivo de tu consulta..."></textarea>
                 </div>
                 <div className="pt-6">
-                  <button className="w-full bg-secondary text-background py-5 rounded-xl font-headline font-extrabold uppercase tracking-[0.2em] text-xs hover:bg-white transition-all active:scale-[0.98] flex items-center justify-center gap-3 shadow-lg shadow-secondary/10">
-                    Confirmar Solicitud <Send className="w-4 h-4" />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading' || status === 'success'}
+                    className="w-full bg-secondary text-background py-5 rounded-xl font-headline font-extrabold uppercase tracking-[0.2em] text-xs hover:bg-white transition-all active:scale-[0.98] flex items-center justify-center gap-3 shadow-lg shadow-secondary/10 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {status === 'loading' && (<>Enviando <Loader2 className="w-4 h-4 animate-spin" /></>)}
+                    {status === 'success' && (<>Enviado <Check className="w-4 h-4" /></>)}
+                    {(status === 'idle' || status === 'error') && (<>Confirmar Solicitud <Send className="w-4 h-4" /></>)}
                   </button>
+                  {status === 'success' && (
+                    <p className="mt-6 flex items-start gap-3 text-secondary text-sm font-light leading-relaxed">
+                      <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      Gracias por contactarnos. Te responderemos a la mayor brevedad posible.
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="mt-6 flex items-start gap-3 text-red-400 text-sm font-light leading-relaxed">
+                      <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      {errorMessage}
+                    </p>
+                  )}
                   <p className="text-[10px] text-on-surface-variant mt-6 text-center font-light">
                     Al enviar este formulario, aceptas nuestra política de privacidad y el tratamiento de tus datos con fines clínicos.
                   </p>

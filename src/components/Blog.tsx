@@ -1,14 +1,49 @@
 "use client";
 import { motion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Check, AlertCircle, Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 import { blogPosts as posts } from '../lib/blog-data';
 
 export default function Blog() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+
+  async function handleNewsletterSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus('loading');
+    setErrorMessage('');
+    const formData = new FormData(form);
+    const payload: Record<string, string> = {
+      subject: 'Nueva suscripción al newsletter',
+      from_name: 'Web Podofisio Clinic — Newsletter',
+    };
+    formData.forEach((value, key) => { payload[key] = String(value); });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+        setErrorMessage(data.message ?? 'No se pudo suscribir. Inténtalo de nuevo.');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMessage('Error de conexión. Inténtalo de nuevo.');
+    }
+  }
+
   return (
     <section className="py-32 bg-surface-lowest">
       <div className="max-w-7xl mx-auto px-8">
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -34,8 +69,8 @@ export default function Blog() {
             >
             <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
               <div className="aspect-[16/10] overflow-hidden relative">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 opacity-40 group-hover:opacity-100"
                   referrerPolicy="no-referrer"
@@ -62,8 +97,7 @@ export default function Blog() {
           ))}
         </div>
 
-        {/* Newsletter Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -78,16 +112,39 @@ export default function Blog() {
                 Recibe mensualmente consejos de salud, ejercicios de prevención y las últimas novedades tecnológicas directamente en tu bandeja de entrada.
               </p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input 
-                type="email" 
-                placeholder="tu@email.com" 
-                className="flex-grow bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-secondary transition-all"
-              />
-              <button className="bg-secondary text-background px-8 py-4 rounded-xl font-headline font-bold text-xs uppercase tracking-widest hover:bg-white transition-all">
-                Suscribirme
-              </button>
-            </form>
+            <div>
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4">
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="tu@email.com"
+                  className="flex-grow bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-secondary transition-all"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'loading' || status === 'success'}
+                  className="bg-secondary text-background px-8 py-4 rounded-xl font-headline font-bold text-xs uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === 'loading' && (<>Enviando <Loader2 className="w-4 h-4 animate-spin" /></>)}
+                  {status === 'success' && (<>Suscrito <Check className="w-4 h-4" /></>)}
+                  {(status === 'idle' || status === 'error') && 'Suscribirme'}
+                </button>
+              </form>
+              {status === 'success' && (
+                <p className="mt-4 flex items-start gap-2 text-secondary text-xs font-light">
+                  <Check className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                  ¡Gracias! Te enviaremos contenidos relevantes sobre podología y fisioterapia.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="mt-4 flex items-start gap-2 text-red-400 text-xs font-light">
+                  <AlertCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                  {errorMessage}
+                </p>
+              )}
+            </div>
           </div>
         </motion.div>
       </div>
