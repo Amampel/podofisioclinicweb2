@@ -14,42 +14,42 @@ const mainServices = [
     title: 'Ecografía',
     description: 'Diagnóstico por imagen de alta resolución para identificar patologías musculoesqueléticas en tiempo real.',
     icon: Scan,
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/01-ecografia.png',
   },
   {
     slug: 'epte',
     title: 'EPTE',
     description: 'Electrolisis percutánea terapéutica para regenerar tejido dañado y resolver tendinopatías crónicas bajo control ecográfico.',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/02-epte.jpg',
   },
   {
     slug: 'recuperacion-funcional',
     title: 'Recuperación Funcional',
     description: 'Fisioterapia y rehabilitación integral para devolverte el movimiento y la función tras lesiones o cirugías.',
     icon: Activity,
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/03-recuperacion.png',
   },
   {
     slug: 'indiba',
     title: 'Indiba',
     description: 'Radiofrecuencia terapéutica de 448 kHz que acelera la reparación tisular en profundidad sin dolor.',
     icon: Radio,
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/04-indiba.png',
   },
   {
     slug: 'quiropodia',
     title: 'Quiropodía',
     description: 'Tratamiento y cuidado profesional del pie: callos, durezas, uñas y prevención del pie diabético.',
     icon: Footprints,
-    image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/05-quiropodia.png',
   },
   {
     slug: 'estudio-biomecanico',
     title: 'Estudio Biomecánico',
     description: 'Análisis computerizado de la pisada y la marcha para detectar desequilibrios y prevenir lesiones.',
     icon: ScanLine,
-    image: 'https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/06-biomecanico.png',
     hasSubServices: true,
   },
 ];
@@ -411,7 +411,7 @@ export default function Services() {
           >
             <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 relative group">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                src="/assets/services/04-indiba.png"
                 alt="Technology"
                 className="w-full h-full object-cover grayscale opacity-60 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                 referrerPolicy="no-referrer"

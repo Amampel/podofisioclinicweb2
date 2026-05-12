@@ -59,8 +59,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Diagnóstico por imagen en tiempo real',
     description:
       'La ecografía musculoesquelética de alta resolución permite visualizar tendones, ligamentos y estructuras del pie en tiempo real, obteniendo un diagnóstico preciso, sin radiación y en la misma consulta.',
-    image:
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/01-ecografia.png',
     stats: [
       { value: 'Alta resolución', label: 'Imagen diagnóstica' },
       { value: 'Sin radiación', label: 'Seguro al 100%' },
@@ -191,8 +190,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Electrolisis percutánea terapéutica guiada por ecografía',
     description:
       'La EPTE aplica una microcorriente galvánica de baja intensidad directamente sobre el tejido tendinoso degenerado, desencadenando una respuesta inflamatoria controlada que activa la regeneración natural del tejido sin necesidad de cirugía.',
-    image:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/02-epte.jpg',
     stats: [
       { value: '3-6 sesiones', label: 'Protocolo estándar' },
       { value: '>90% eficacia', label: 'En tendinopatías crónicas' },
@@ -322,8 +320,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Rehabilitación integral del movimiento y la función',
     description:
       'Programa de recuperación funcional que combina terapia manual, ejercicio terapéutico y reeducación propioceptiva para restaurar el movimiento, eliminar el dolor y prevenir recaídas de forma duradera.',
-    image:
-      'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/03-recuperacion.png',
     stats: [
       { value: 'Ejercicio terapéutico', label: 'Base del tratamiento' },
       { value: 'Terapia manual', label: 'Técnicas especializadas' },
@@ -454,8 +451,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Radiofrecuencia terapéutica de 448 kHz',
     description:
       'Indiba utiliza la radiofrecuencia de 448 kHz para generar calor terapéutico en tejidos profundos, activando la regeneración celular, acelerando la recuperación y aliviando el dolor crónico de forma completamente indolora.',
-    image:
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/04-indiba.png',
     stats: [
       { value: '448 kHz', label: 'Frecuencia óptima' },
       { value: 'Tejido profundo', label: 'Acción en profundidad' },
@@ -586,8 +582,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Cuidado profesional y tratamiento del pie',
     description:
       'La quiropodía comprende el tratamiento profesional de callos, durezas, uñas engrosadas, helomas y otras patologías dérmicas del pie, garantizando la salud cutánea y ungueal con técnicas indoloras y equipos de máxima higiene.',
-    image:
-      'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/05-quiropodia.png',
     stats: [
       { value: 'Revisión completa', label: 'Del pie y el tobillo' },
       { value: 'Sin dolor', label: 'Técnica indolora' },
@@ -718,8 +713,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Análisis computerizado de la pisada y la marcha',
     description:
       'El estudio biomecánico analiza de forma computerizada la pisada, la marcha y la postura del paciente mediante plataformas de presiones y sensores inerciales, identificando alteraciones que provocan dolor y lesiones recurrentes.',
-    image:
-      'https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/06-biomecanico.png',
     stats: [
       { value: 'Análisis 3D', label: 'Cinemática del movimiento' },
       { value: 'Plataforma de presiones', label: 'Distribución plantar' },
@@ -872,8 +866,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Soportes plantares personalizados mediante impresión 3D',
     description:
       'Plantillas ortopédicas completamente personalizadas diseñadas a partir del estudio biomecánico individual, fabricadas mediante escáner 3D e impresión aditiva con materiales de alta tecnología para corregir la pisada y eliminar el dolor.',
-    image:
-      'https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/07-plantillas.png',
     stats: [
       { value: 'Escáner 3D', label: 'Molde digital preciso' },
       { value: 'Impresión aditiva', label: 'Fabricación personalizada' },
@@ -1006,8 +999,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Plasma Rico en Plaquetas para la regeneración tisular',
     description:
       'El PRP utiliza la propia sangre del paciente, concentrada en factores de crecimiento plaquetarios, para estimular la regeneración natural de tejidos dañados como tendones, ligamentos y cartílago, con resultados duraderos y sin rechazo.',
-    image:
-      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop',
+    image: '/assets/services/08-prp.png',
     stats: [
       { value: 'Sangre propia', label: 'Sin riesgo de rechazo' },
       { value: 'Concentración x5', label: 'Respecto a sangre normal' },
@@ -1138,8 +1130,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Resolución definitiva de patologías ungueales',
     description:
       'Cirugía ungueal ambulatoria con anestesia local para la resolución definitiva de uñas encarnadas, onicocriptosis recidivante y otras patologías ungueales, con alta el mismo día y una tasa de éxito superior al 95%.',
-    image:
-      'https://images.unsplash.com/photo-1579154235602-3c20fa4f597e?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/09-cirugia.png',
     stats: [
       { value: 'Ambulatoria', label: 'Sin ingreso hospitalario' },
       { value: 'Anestesia local', label: 'Sin sedación general' },
@@ -1270,8 +1261,7 @@ export const allServices: ServiceData[] = [
     subtitle: 'Presoterapia y Cryopush para la recuperación y el bienestar',
     description:
       'La presoterapia y el Cryopush son dos tecnologías complementarias que aceleran la recuperación muscular, mejoran el drenaje linfático y alivian la sensación de piernas pesadas mediante compresión neumática secuencial y crioterapia localizada.',
-    image:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
+    image: '/assets/services/10-complementarios.png',
     stats: [
       { value: 'Presoterapia', label: 'Drenaje linfático mecánico' },
       { value: 'Cryopush', label: 'Crioterapia de recuperación' },

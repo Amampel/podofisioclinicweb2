@@ -5,7 +5,15 @@
       "WebSearch",
       "WebFetch(domain:developers.google.com)",
       "Bash(git config *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "WebFetch(domain:unsplash.com)",
+      "mcp__claude_ai_Freepik__search_resources",
+      "mcp__claude_ai_Freepik__download_resource_by_id",
+      "mcp__claude_ai_higgsfield_ai_mcp__balance",
+      "mcp__claude_ai_higgsfield_ai_mcp__models_explore",
+      "mcp__claude_ai_higgsfield_ai_mcp__generate_image",
+      "Bash(curl -sL -o public/assets/services/02-epte.jpg \"https://img.freepik.com/free-photo/closeup-shirtless-man-receiving-dry-needling-therapy-from-doctor-clinic_662251-1634.jpg?size=2000&t=st=1778583787~exp=1778587387~hmac=5fe93d7d9d811174f01f2d4833fad2c9168ffb76c4cfbc4c1b9c20a42920575f\")",
+      "mcp__claude_ai_higgsfield_ai_mcp__job_status"
     ]
   }
 }

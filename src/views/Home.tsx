@@ -141,10 +141,9 @@ export default function Home() {
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop"
-                  alt="Clinical Excellence"
-                  className="w-full h-full object-cover grayscale opacity-60 hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
+                  src="/assets/images/equipo-podofisio.jpeg"
+                  alt="Eric Herrero y Martina Lupacchini — Equipo Podofisio Clinic Terrassa"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                 />
               </div>
               <div className="absolute -bottom-10 -left-10 glass-card p-10 rounded-2xl border border-secondary/20 hidden md:block">
