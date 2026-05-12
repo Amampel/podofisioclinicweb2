@@ -9,7 +9,7 @@ export default function FloatingActions() {
         {/* WhatsApp Button */}
         <motion.a
           key="whatsapp-btn"
-          href="https://wa.me/34937000000?text=%C2%A1Hola!%20%F0%9F%91%8B%20He%20visto%20vuestra%20web%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20podolog%C3%ADa%20y%20fisioterapia.%20%C2%BFPodr%C3%ADais%20ayudarme%3F%20Gracias." // Improved message
+          href="https://wa.me/34624578754?text=%C2%A1Hola!%20%F0%9F%91%8B%20He%20visto%20vuestra%20web%20y%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20podolog%C3%ADa%20y%20fisioterapia.%20%C2%BFPodr%C3%ADais%20ayudarme%3F%20Gracias."
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.5, x: 20 }}
@@ -28,7 +28,7 @@ export default function FloatingActions() {
         {/* Phone Button */}
         <motion.a
           key="phone-btn"
-          href="tel:+34937000000" // Replace with real number
+          href="tel:+34624578754"
           initial={{ opacity: 0, scale: 0.5, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ delay: 0.1 }}

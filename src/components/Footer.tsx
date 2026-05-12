@@ -27,17 +27,16 @@ export default function Footer() {
           <div>
             <span className="text-xs font-bold text-white uppercase tracking-widest mb-6 block">Contacto</span>
             <ul className="space-y-4">
-              <li className="text-sm text-neutral-400">Carrer de la Salut, 42, Terrassa</li>
-              <li className="text-sm text-neutral-400">+34 937 000 000</li>
-              <li className="text-sm text-neutral-400">hola@podofisio.clinic</li>
+              <li className="text-sm text-neutral-400">Plaça de Mossèn Jacint Verdaguer, 1, Terrassa</li>
+              <li className="text-sm text-neutral-400">+34 624 57 87 54</li>
+              <li className="text-sm text-neutral-400">info@podofisioclinic.com</li>
             </ul>
           </div>
 
           <div>
             <span className="text-xs font-bold text-white uppercase tracking-widest mb-6 block">Síguenos</span>
             <div className="flex space-x-6">
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors text-sm">Instagram</a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors text-sm">LinkedIn</a>
+              <a href="https://www.instagram.com/podofisio.clinic/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors text-sm">Instagram</a>
             </div>
           </div>
         </div>

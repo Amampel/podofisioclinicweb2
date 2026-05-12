@@ -36,7 +36,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-headline font-bold text-white mb-2 text-xl">Ubicación</h3>
-                  <p className="text-on-surface-variant text-base leading-relaxed font-light">Carrer de la Salut, 42<br />08221 Terrassa, Barcelona</p>
+                  <p className="text-on-surface-variant text-base leading-relaxed font-light">Plaça de Mossèn Jacint Verdaguer, 1<br />08221 Terrassa, Barcelona</p>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
@@ -45,7 +45,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-headline font-bold text-white mb-2 text-xl">Teléfono</h3>
-                  <p className="text-on-surface-variant text-base font-light">+34 937 000 000</p>
+                  <p className="text-on-surface-variant text-base font-light">+34 624 57 87 54</p>
                   <p className="text-secondary text-xs font-bold mt-1 uppercase tracking-widest">Atención WhatsApp disponible</p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-headline font-bold text-white mb-2 text-xl">Email</h3>
-                  <p className="text-on-surface-variant text-base font-light">hola@podofisio.clinic</p>
+                  <p className="text-on-surface-variant text-base font-light">info@podofisioclinic.com</p>
                 </div>
               </div>
             </motion.div>
@@ -86,31 +86,32 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Map Placeholder */}
-            <motion.div 
+            {/* Map */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="relative h-[350px] w-full rounded-2xl overflow-hidden glass-card group border border-white/5"
+              className="space-y-4"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop" 
-                alt="Map"
-                className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-105 transition-transform duration-1000"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-white/5 backdrop-blur-md border border-white/10 text-white px-6 py-4 rounded-xl text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-secondary hover:text-background hover:border-secondary transition-all duration-500"
-                >
-                  Cómo llegar <MapPin className="w-4 h-4" />
-                </a>
+              <div className="relative h-[350px] w-full rounded-2xl overflow-hidden glass-card border border-white/5">
+                <iframe
+                  title="Ubicación Podofisio Clinic — Plaça de Mossèn Jacint Verdaguer, 1, Terrassa"
+                  src="https://www.google.com/maps?q=Pla%C3%A7a+de+Mossen+Jacint+Verdaguer+1+08221+Terrassa&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
               </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+Mossen+Jacint+Verdaguer+1+Terrassa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-white/5 backdrop-blur-md border border-white/10 text-white px-6 py-4 rounded-xl text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-secondary hover:text-background hover:border-secondary transition-all duration-500"
+              >
+                Cómo llegar <MapPin className="w-4 h-4" />
+              </a>
             </motion.div>
           </div>
 
@@ -142,12 +143,24 @@ export default function Contact() {
                 </div>
                 <div className="space-y-3">
                   <label className="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Servicio Requerido</label>
-                  <select className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 appearance-none font-light cursor-pointer">
-                    <option className="bg-surface">Selecciona una opción</option>
-                    <option className="bg-surface">Podología Clínica (Quiropodia)</option>
-                    <option className="bg-surface">Fisioterapia Invasiva / Indiba</option>
-                    <option className="bg-surface">Estudio Biomecánico / Plantillas</option>
-                    <option className="bg-surface">Cirugía del Pie</option>
+                  <select defaultValue="" className="w-full bg-transparent border-0 border-b border-white/10 text-white focus:ring-0 focus:border-secondary transition-all py-4 px-0 appearance-none font-light cursor-pointer">
+                    <option value="" disabled className="bg-surface">Selecciona una opción</option>
+                    <optgroup label="Fisioterapia Avanzada" className="bg-surface">
+                      <option className="bg-surface">Sesión de fisioterapia</option>
+                      <option className="bg-surface">Ecografía musculoesquelética</option>
+                      <option className="bg-surface">EPTE (Electrólisis Percutánea)</option>
+                      <option className="bg-surface">Indiba</option>
+                      <option className="bg-surface">Infiltraciones ecoguiadas</option>
+                      <option className="bg-surface">Recuperación funcional</option>
+                    </optgroup>
+                    <optgroup label="Podología Clínica" className="bg-surface">
+                      <option className="bg-surface">Quiropodía</option>
+                      <option className="bg-surface">Estudio biomecánico</option>
+                      <option className="bg-surface">Plantillas personalizadas</option>
+                      <option className="bg-surface">PRP (Factores de Crecimiento)</option>
+                      <option className="bg-surface">Cirugía ungueal</option>
+                    </optgroup>
+                    <option className="bg-surface">Otra consulta</option>
                   </select>
                 </div>
                 <div className="space-y-3">

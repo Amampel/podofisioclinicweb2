@@ -98,7 +98,7 @@ export default async function ServicePage({
         addressRegion: "Catalunya",
         addressCountry: "ES",
       },
-      telephone: "+34 93 000 00 00",
+      telephone: "+34 624 57 87 54",
       priceRange: "€€",
     },
     availableService: service.conditions.map((condition) => ({

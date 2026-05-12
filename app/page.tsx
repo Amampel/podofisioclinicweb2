@@ -50,7 +50,7 @@ const faqJsonLd = {
       name: "¿Dónde está Podofisio Clinic en Terrassa?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Estamos en el Carrer de la Salut, 42, 08221 Terrassa (Barcelona). Atendemos de lunes a jueves de 9h a 20h y los viernes de 9h a 18h. También atendemos pacientes de Rubí, Sant Cugat del Vallès, Sabadell y el Vallès Occidental.",
+        text: "Estamos en la Plaça de Mossèn Jacint Verdaguer, 1, 08221 Terrassa (Barcelona). Atendemos de lunes a jueves de 9h a 20h y los viernes de 9h a 18h. También atendemos pacientes de Rubí, Sant Cugat del Vallès, Sabadell y el Vallès Occidental.",
       },
     },
   ],

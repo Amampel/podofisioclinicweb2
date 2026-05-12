@@ -39,16 +39,17 @@ export default function Pricing() {
                 {[
                   { title: 'Diagnóstico inicial + Tratamiento', price: '70€', desc: 'Valoración inicial exhaustiva, diagnóstico y primer tratamiento manual o tecnológico.' },
                   { title: 'Sesiones de Seguimiento', price: '65€', desc: 'Continuación del plan de tratamiento personalizado. 55 min.' },
-                  { title: 'Pack 5 sesiones', price: '300€', perSession: '60€ / SESIÓN', desc: 'Bono de recuperación para procesos de rehabilitación media.' },
-                  { title: 'Pack 10 sesiones', price: '550€', perSession: '55€ / SESIÓN', desc: 'Mantenimiento preventivo y optimización a largo plazo.', badge: 'Mejor Valor' }
-                ].map((item, idx) => (
+                  { title: 'Pack 5 sesiones', price: '325€', perSession: '65€ / SESIÓN', desc: 'Bono de recuperación para procesos de rehabilitación media.', badge: 'Mejor Valor' },
+                  { title: 'Pack 10 sesiones', price: '550€', perSession: '55€ / SESIÓN', desc: 'Mantenimiento preventivo y optimización a largo plazo.' },
+                  { title: 'Infiltraciones', price: '70€', desc: 'Infiltración ecoguiada para tendinopatías y procesos inflamatorios localizados.' }
+                ].map((item, idx, arr) => (
                   <motion.div
                     key={`fisioterapia-${idx}-${item.title}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
                     viewport={{ once: true }}
-                    className={`flex justify-between items-end ${idx !== 3 ? 'pb-8 border-b border-white/5' : ''} group`}
+                    className={`flex justify-between items-end ${idx !== arr.length - 1 ? 'pb-8 border-b border-white/5' : ''} group`}
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -84,11 +85,11 @@ export default function Pricing() {
             <div className="space-y-8 flex-grow">
               {[
                 { name: 'Visita Podológica', price: '50€', desc: 'Consulta inicial y diagnóstico.' },
-                { name: 'Quiropodia', price: '40€', desc: 'Tratamiento integral de piel y uñas.' },
-                { name: 'Estudio Biomecánico', price: '60€ / 80€', desc: '60€ con plantillas / 80€ sin plantillas.' },
-                { name: 'Plantillas Personalizadas', price: '190€', desc: 'Fabricación con materiales técnicos.' },
+                { name: 'Quiropodia', price: '35€', desc: 'Tratamiento integral de piel y uñas.' },
+                { name: 'Estudio Biomecánico', price: '50€ / 70€', desc: '50€ sin plantillas / 70€ con plantillas.' },
+                { name: 'Plantillas Personalizadas', price: '200€', desc: 'Fabricación con materiales técnicos.' },
                 { name: 'PRP (Factores de Crecimiento)', price: '300€', desc: 'Tratamiento biológico regenerativo.' },
-                { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: '200€ por canal / 350€ por 2 canales.' }
+                { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: 'Resolución definitiva con anestesia local.' }
               ].map((item, idx) => (
                 <motion.div
                   key={`podologia-${idx}-${item.name}`}

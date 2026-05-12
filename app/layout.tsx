@@ -5,11 +5,6 @@ import "../src/index.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import FloatingActions from "../src/components/FloatingActions";
-import Maintenance from "../src/components/Maintenance";
-import ConstructionGuard from "../src/components/ConstructionGuard";
-
-const UNDER_CONSTRUCTION = true;
-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.podofisioclinic.com"),
@@ -74,11 +69,11 @@ const jsonLd = {
   url: "https://www.podofisioclinic.com",
   logo: "https://www.podofisioclinic.com/assets/images/podofisio_logo.png",
   image: "https://www.podofisioclinic.com/og-image.jpg",
-  telephone: "+34937000000",
-  email: "hola@podofisio.clinic",
+  telephone: "+34624578754",
+  email: "info@podofisioclinic.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Carrer de la Salut, 42",
+    streetAddress: "Plaça de Mossèn Jacint Verdaguer, 1",
     addressLocality: "Terrassa",
     postalCode: "08221",
     addressRegion: "Barcelona",
@@ -125,8 +120,7 @@ const jsonLd = {
     { "@type": "AdministrativeArea", "name": "Vallès Occidental" },
   ],
   sameAs: [
-    "https://www.instagram.com/podofisioclinic",
-    "https://www.facebook.com/podofisioclinic",
+    "https://www.instagram.com/podofisio.clinic/",
   ],
 };
 
@@ -142,16 +136,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ConstructionGuard isUnderConstruction={UNDER_CONSTRUCTION}>
-          <div className="min-h-screen bg-background flex flex-col">
-            <Navbar />
-            <main className="flex-grow pt-20">{children}</main>
-            <Footer />
-            <FloatingActions />
-            <SpeedInsights />
-            <Analytics />
-          </div>
-        </ConstructionGuard>
+        <div className="min-h-screen bg-background flex flex-col">
+          <Navbar />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+          <FloatingActions />
+          <SpeedInsights />
+          <Analytics />
+        </div>
       </body>
     </html>
   );

@@ -29,13 +29,12 @@ export default function About() {
               className="lg:col-span-5"
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-card border border-white/10 relative group">
-                <img 
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Eric Herrero Castro"
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
+                <img
+                  src="/assets/images/eric-herrero.jpeg"
+                  alt="Eric Herrero Castro — Fisioterapeuta y Podólogo en Podofisio Clinic Terrassa"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-80" />
               </div>
             </motion.div>
             
@@ -76,13 +75,12 @@ export default function About() {
               className="lg:col-span-5 lg:order-2"
             >
               <div className="aspect-[4/5] rounded-2xl overflow-hidden glass-card border border-white/10 relative group">
-                <img 
-                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop" 
-                  alt="Martina Lupacchini González"
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
+                <img
+                  src="/assets/images/martina-lupacchini.jpeg"
+                  alt="Martina Lupacchini González — Podóloga en Podofisio Clinic Terrassa"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-80" />
               </div>
             </motion.div>
             
