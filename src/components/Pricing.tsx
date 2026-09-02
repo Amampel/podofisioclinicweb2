@@ -85,7 +85,7 @@ export default function Pricing() {
                 { name: 'Visita Podológica', price: '50€', desc: 'Consulta inicial y diagnóstico.' },
                 { name: 'Quiropodia', price: '35€', desc: 'Tratamiento integral de piel y uñas.' },
                 { name: 'Estudio Biomecánico', price: '70€ / 50€', desc: '70€ sin plantillas / 50€ con plantillas.' },
-                { name: 'Plantillas Personalizadas', price: '200€', desc: 'Fabricación con materiales técnicos.' },
+                { name: 'Plantillas Personalizadas', price: '230€', desc: 'Fabricación con materiales técnicos.' },
                 { name: 'PRP (Factores de Crecimiento)', price: '300€', desc: 'Tratamiento biológico regenerativo.' },
                 { name: 'Cirugía Ungueal', price: 'Desde 200€', desc: 'Resolución definitiva con anestesia local.' }
               ].map((item, idx) => (

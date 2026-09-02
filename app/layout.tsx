@@ -65,7 +65,7 @@ const jsonLd = {
   "@type": "MedicalClinic",
   name: "Podofisio Clinic",
   description:
-    "Clínica especializada en podología y fisioterapia en Terrassa. Tratamos patologías de la extremidad inferior con tecnología avanzada: ecografía, EPI/EPTE, Indiba, biomecánica digital y plantillas 3D.",
+    "Clínica especializada en podología y fisioterapia en Terrassa. Tratamos patologías de la extremidad inferior con tecnología avanzada: ecografía, EPI/EPTE, radiofrecuencia Globus, biomecánica digital y plantillas 3D.",
   url: "https://www.podofisioclinic.com",
   logo: "https://www.podofisioclinic.com/assets/images/podofisio_logo.png",
   image: "https://www.podofisioclinic.com/og-image.jpg",
@@ -105,7 +105,7 @@ const jsonLd = {
     { "@type": "MedicalTherapy", "name": "Biomecánica Digital" },
     { "@type": "MedicalTherapy", "name": "Plantillas 3D Élite" },
     { "@type": "MedicalTherapy", "name": "EPI / EPTE Guiada" },
-    { "@type": "MedicalTherapy", "name": "Radiofrecuencia Indiba" },
+    { "@type": "MedicalTherapy", "name": "Radiofrecuencia Globus" },
     { "@type": "MedicalTherapy", "name": "Ecografía Clínica" },
     { "@type": "MedicalTherapy", "name": "Cirugía Ungueal" },
   ],

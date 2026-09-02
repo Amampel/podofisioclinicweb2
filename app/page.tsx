@@ -26,7 +26,7 @@ const faqJsonLd = {
       name: "¿Qué es la fascitis plantar y cómo se trata?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La fascitis plantar es la inflamación de la fascia plantar, el tejido que une el talón con los dedos. Provoca un dolor intenso en el talón especialmente al dar los primeros pasos por la mañana. En Podofisio Clinic la tratamos con EPI/EPTE guiada por ecografía, radiofrecuencia Indiba, plantillas personalizadas y corrección biomecánica.",
+        text: "La fascitis plantar es la inflamación de la fascia plantar, el tejido que une el talón con los dedos. Provoca un dolor intenso en el talón especialmente al dar los primeros pasos por la mañana. En Podofisio Clinic la tratamos con EPI/EPTE guiada por ecografía, radiofrecuencia Globus, plantillas personalizadas y corrección biomecánica.",
       },
     },
     {
