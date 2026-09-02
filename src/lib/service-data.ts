@@ -176,7 +176,7 @@ export const allServices: ServiceData[] = [
     ],
     metaDescription:
       'Ecografía musculoesquelética de alta resolución en Terrassa. Diagnóstico inmediato del pie y tobillo sin radiación. Reserva tu cita en Podofisio Clinic.',
-    relatedServices: ['epte', 'indiba', 'estudio-biomecanico'],
+    relatedServices: ['epte', 'radiofrecuencia', 'estudio-biomecanico'],
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const allServices: ServiceData[] = [
     ],
     metaDescription:
       'EPTE — Electrolisis Percutánea Terapéutica en Terrassa. Tratamiento de tendinopatías crónicas sin cirugía, guiado por ecografía. Podofisio Clinic.',
-    relatedServices: ['ecografia', 'indiba', 'estudio-biomecanico'],
+    relatedServices: ['ecografia', 'radiofrecuencia', 'estudio-biomecanico'],
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -437,59 +437,59 @@ export const allServices: ServiceData[] = [
     ],
     metaDescription:
       'Recuperación funcional y fisioterapia en Terrassa. Rehabilitación personalizada con terapia manual y ejercicio terapéutico. Podofisio Clinic.',
-    relatedServices: ['epte', 'indiba', 'ecografia'],
+    relatedServices: ['epte', 'radiofrecuencia', 'ecografia'],
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // 04 · INDIBA
+  // 04 · RADIOFRECUENCIA (DIATERMIA)
   // ─────────────────────────────────────────────────────────────────
   {
-    slug: 'indiba',
+    slug: 'radiofrecuencia',
     number: '04',
     category: 'Tecnología Médica',
-    title: 'Indiba',
-    subtitle: 'Radiofrecuencia terapéutica de 448 kHz',
+    title: 'Radiofrecuencia Globus',
+    subtitle: 'Diatermia · Globus DiaCaRe 5000',
     description:
-      'Indiba utiliza la radiofrecuencia de 448 kHz para generar calor terapéutico en tejidos profundos, activando la regeneración celular, acelerando la recuperación y aliviando el dolor crónico de forma completamente indolora.',
-    image: '/assets/services/04-indiba.png',
+      'La diatermia es una técnica de fisioterapia que aplica energía mediante radiofrecuencia sobre los tejidos para complementar el tratamiento de alteraciones musculoesqueléticas. Trabajamos con el equipo Globus DiaCaRe 5000, con frecuencias seleccionables de 300 a 1000 kHz y modalidades capacitiva y resistiva.',
+    image: '/assets/services/04-radiofrecuencia.png',
     stats: [
-      { value: '448 kHz', label: 'Frecuencia óptima' },
-      { value: 'Tejido profundo', label: 'Acción en profundidad' },
+      { value: '300–1000 kHz', label: 'Frecuencias seleccionables' },
+      { value: 'Capacitiva / Resistiva', label: 'Dos modalidades' },
       { value: 'Sin dolor', label: 'Sesión confortable' },
-      { value: 'Recuperación acelerada', label: 'Resultados rápidos' },
+      { value: 'Individualizado', label: 'Tratamiento adaptado' },
     ],
     overview:
-      'Indiba es un sistema de radiofrecuencia terapéutica que opera a la frecuencia característica de 448 kHz, elegida por su capacidad única de interaccionar con la membrana celular y optimizar el metabolismo tisular sin generar efectos negativos sobre el organismo. A diferencia de otras fuentes de calor superficial, la radiofrecuencia de Indiba penetra en tejidos profundos —músculo, tendón, ligamento, cápsula articular— generando un calor interno controlado que activa mecanismos fisiológicos de reparación: estimulación de fibroblastos y condrocitos, aumento del flujo sanguíneo local, incremento del metabolismo celular, reducción del espasmo muscular y modulación de la respuesta inflamatoria. El equipo dispone de dos modos de aplicación: el modo capacitivo, que actúa preferentemente sobre tejidos blandos superficiales como la fascia y la musculatura, y el modo resistivo, que penetra más en profundidad y es de elección para estructuras como ligamentos, tendones y cápsula articular. Esta versatilidad permite tratar de forma eficaz un amplísimo espectro de patologías musculoesqueléticas. En Podofisio Clinic Terrassa utilizamos Indiba como parte de protocolos integrales de recuperación, combinándola con terapia manual y ejercicio terapéutico para potenciar los resultados y acortar los plazos de recuperación.',
+      'La diatermia es una técnica utilizada en fisioterapia y rehabilitación que permite aplicar energía mediante radiofrecuencia sobre los tejidos con el objetivo de complementar el tratamiento de diferentes alteraciones musculoesqueléticas. En Podofisio Clinic Terrassa trabajamos con el equipo Globus DiaCaRe 5000, un dispositivo profesional de tecarterapia que permite trabajar con diferentes frecuencias de emisión —300, 400, 448, 470, 700 y 1000 kHz— y adaptar el tratamiento a las características del tejido y a los objetivos terapéuticos de cada paciente. El equipo dispone de dos modalidades principales de aplicación: capacitiva y resistiva. La modalidad capacitiva permite trabajar principalmente sobre tejidos con mayor contenido hídrico, como la musculatura y otros tejidos blandos, mientras que la modalidad resistiva permite orientar el tratamiento hacia estructuras de mayor resistencia, como tendones, ligamentos y otras estructuras del sistema musculoesquelético. La posibilidad de seleccionar diferentes frecuencias, modalidades y parámetros permite al fisioterapeuta individualizar el tratamiento en función de la lesión, su fase evolutiva y las necesidades específicas de cada paciente. En Podofisio Clinic Terrassa utilizamos la diatermia Globus DiaCaRe 5000 como herramienta complementaria dentro de nuestros protocolos de recuperación, integrándola cuando está indicada con terapia manual, ejercicio terapéutico y otras técnicas de fisioterapia. Nuestro objetivo no es tratar únicamente los síntomas, sino integrar las diferentes herramientas terapéuticas dentro de un plan de recuperación individualizado y adaptado a cada paciente.',
     benefits: [
       {
         title: 'Acción en tejidos profundos',
         description:
-          'La radiofrecuencia de 448 kHz penetra hasta 5-6 cm de profundidad, llegando a tendones, ligamentos y estructuras articulares que no son accesibles para otras terapias físicas convencionales.',
+          'La radiofrecuencia aporta energía a estructuras profundas —tendones, ligamentos y cápsula articular— que no son accesibles para otras terapias físicas convencionales.',
       },
       {
-        title: 'Activación de la regeneración celular',
+        title: 'Frecuencias seleccionables',
         description:
-          'El calor endógeno generado estimula la producción de colágeno por los fibroblastos, accelera el metabolismo celular y potencia los mecanismos naturales de reparación tisular a nivel microscópico.',
+          'El Globus DiaCaRe 5000 permite elegir entre seis frecuencias de emisión (300, 400, 448, 470, 700 y 1000 kHz) para ajustar la aplicación al tipo de tejido y al objetivo terapéutico.',
       },
       {
-        title: 'Reducción rápida del dolor y la inflamación',
+        title: 'Reducción del dolor y la inflamación',
         description:
-          'Mejora la circulación local, reduce el edema y modula la respuesta inflamatoria, proporcionando alivio del dolor significativo desde las primeras sesiones en patologías agudas y crónicas.',
+          'Mejora la circulación local, favorece la reducción del edema y modula la respuesta inflamatoria, contribuyendo al alivio del dolor en patologías agudas y crónicas.',
       },
       {
         title: 'Aplicación completamente indolora',
         description:
-          'La sensación durante la sesión es de un calor profundo muy confortable y relajante. No genera ningún tipo de molestia y el paciente puede retomar su actividad inmediatamente tras la sesión.',
+          'La sensación durante la sesión es de un calor profundo, confortable y relajante. El paciente puede retomar su actividad inmediatamente tras la sesión.',
       },
       {
-        title: 'Versatilidad terapéutica',
+        title: 'Modalidades capacitiva y resistiva',
         description:
-          'Los dos modos de aplicación —capacitivo y resistivo— permiten adaptar el tratamiento a la profundidad y el tipo de tejido diana, haciendo de Indiba una herramienta válida para un amplio rango de patologías.',
+          'La modalidad capacitiva actúa sobre tejidos con mayor contenido hídrico, como la musculatura; la resistiva orienta el tratamiento hacia tendones, ligamentos y estructuras de mayor resistencia.',
       },
       {
         title: 'Sinergia con otras técnicas',
         description:
-          'Indiba potencia los efectos de la terapia manual realizada durante la misma sesión, pues el calor profundo relaja la musculatura y mejora la viscoelasticidad de los tejidos, facilitando las movilizaciones y estiramientos.',
+          'La diatermia potencia los efectos de la terapia manual realizada durante la misma sesión: el calor profundo relaja la musculatura y mejora la viscoelasticidad de los tejidos, facilitando movilizaciones y estiramientos.',
       },
     ],
     process: [
@@ -497,13 +497,13 @@ export const allServices: ServiceData[] = [
         step: '01',
         title: 'Valoración y selección del protocolo',
         description:
-          'El fisioterapeuta evalúa la zona afectada y selecciona el protocolo de Indiba más adecuado: modo capacitivo o resistivo, parámetros de intensidad y duración en función del diagnóstico y la fase de la lesión.',
+          'El fisioterapeuta evalúa la zona afectada y selecciona la frecuencia, la modalidad (capacitiva o resistiva) y los parámetros de intensidad y duración en función del diagnóstico y la fase de la lesión.',
       },
       {
         step: '02',
         title: 'Preparación de la zona de tratamiento',
         description:
-          'Se aplica un gel conductor especial sobre la piel que permite el deslizamiento fluido del electrodo y optimiza la transmisión de la radiofrecuencia hacia los tejidos profundos.',
+          'Se aplica un gel conductor sobre la piel que permite el deslizamiento fluido del electrodo y optimiza la transmisión de la radiofrecuencia hacia los tejidos profundos.',
       },
       {
         step: '03',
@@ -515,7 +515,7 @@ export const allServices: ServiceData[] = [
         step: '04',
         title: 'Terapia manual combinada',
         description:
-          'Aprovechando el calor tisular generado por Indiba, se realizan técnicas de terapia manual —movilizaciones, estiramientos, liberación miofascial— cuyos efectos se potencian enormemente sobre el tejido calentado.',
+          'Aprovechando el calor tisular generado por la diatermia, se realizan técnicas de terapia manual —movilizaciones, estiramientos, liberación miofascial— cuyos efectos se potencian sobre el tejido calentado.',
       },
       {
         step: '05',
@@ -536,38 +536,38 @@ export const allServices: ServiceData[] = [
     ],
     faq: [
       {
-        question: '¿Cuántas sesiones de Indiba necesito?',
+        question: '¿Cuántas sesiones de radiofrecuencia necesito?',
         answer:
-          'El número de sesiones depende del tipo de lesión y su evolución. Para patologías agudas pueden ser suficientes 4-6 sesiones, mientras que procesos crónicos pueden requerir entre 8 y 12. En muchos casos Indiba se combina con otras técnicas como parte de un protocolo integral, y el fisioterapeuta diseña el número óptimo de sesiones tras la valoración inicial.',
+          'El número de sesiones depende del tipo de lesión y su evolución. Para patologías agudas pueden ser suficientes 4-6 sesiones, mientras que procesos crónicos pueden requerir entre 8 y 12. En muchos casos la diatermia se combina con otras técnicas como parte de un protocolo integral, y el fisioterapeuta diseña el número óptimo de sesiones tras la valoración inicial.',
       },
       {
-        question: '¿Indiba tiene alguna contraindicación?',
+        question: '¿La diatermia tiene alguna contraindicación?',
         answer:
-          'Indiba está contraindicada en embarazo, portadores de marcapasos o implantes electrónicos activos, zonas con prótesis metálicas (relativo), y sobre tejidos con neoplasias activas. El fisioterapeuta revisará tu historial clínico antes de iniciar el tratamiento para verificar la ausencia de contraindicaciones.',
+          'La radiofrecuencia está contraindicada en embarazo, portadores de marcapasos o implantes electrónicos activos, zonas con prótesis metálicas (relativo), y sobre tejidos con neoplasias activas. El fisioterapeuta revisará tu historial clínico antes de iniciar el tratamiento para verificar la ausencia de contraindicaciones.',
       },
       {
-        question: '¿Indiba duele?',
+        question: '¿La radiofrecuencia duele?',
         answer:
-          'No. La sesión de Indiba es completamente indolora e incluso muy agradable. La sensación predominante es la de un calor profundo y relajante. Si en algún momento la intensidad resultase molesta, se ajusta inmediatamente el parámetro.',
+          'No. La sesión es completamente indolora e incluso muy agradable. La sensación predominante es la de un calor profundo y relajante. Si en algún momento la intensidad resultase molesta, se ajusta inmediatamente el parámetro.',
       },
       {
-        question: '¿Puedo combinar Indiba con otros tratamientos?',
+        question: '¿Puedo combinar la diatermia con otros tratamientos?',
         answer:
-          'Sí, y de hecho es muy recomendable. Indiba es especialmente sinérgica con la terapia manual, el ejercicio terapéutico, la EPTE y los ultrasonidos. En nuestra clínica la integramos habitualmente en sesiones que combinan varias técnicas para maximizar los resultados y acortar los tiempos de recuperación.',
+          'Sí, y de hecho es muy recomendable. La radiofrecuencia es especialmente sinérgica con la terapia manual, el ejercicio terapéutico, la EPTE y los ultrasonidos. En nuestra clínica la integramos habitualmente en sesiones que combinan varias técnicas para maximizar los resultados y acortar los tiempos de recuperación.',
       },
     ],
     keywords: [
-      'Indiba Terrassa',
       'radiofrecuencia Terrassa',
-      'fisioterapia Indiba Terrassa',
+      'diatermia Terrassa',
+      'tecarterapia Terrassa',
       'radiofrecuencia terapéutica Terrassa',
-      'Indiba fisioterapia',
-      '448 kHz terapia',
+      'diatermia fisioterapia',
+      'Globus DiaCaRe 5000',
       'calor profundo fisioterapia Terrassa',
       'recuperación muscular Terrassa',
     ],
     metaDescription:
-      'Indiba — Radiofrecuencia terapéutica de 448 kHz en Terrassa. Recuperación acelerada, alivio del dolor profundo y regeneración tisular. Podofisio Clinic.',
+      'Radiofrecuencia Globus — Diatermia con Globus DiaCaRe 5000 en Terrassa. Frecuencias de 300 a 1000 kHz, modalidades capacitiva y resistiva. Podofisio Clinic.',
     relatedServices: ['epte', 'ecografia', 'recuperacion-funcional'],
   },
 
@@ -1299,7 +1299,7 @@ export const allServices: ServiceData[] = [
       {
         title: 'Complemento ideal de otros tratamientos',
         description:
-          'La presoterapia y el Cryopush potencian los efectos de la fisioterapia, el ejercicio terapéutico, el Indiba y los tratamientos invasivos, integrándose de forma natural en los protocolos de recuperación integral de la clínica.',
+          'La presoterapia y el Cryopush potencian los efectos de la fisioterapia, el ejercicio terapéutico, la radiofrecuencia Globus y los tratamientos invasivos, integrándose de forma natural en los protocolos de recuperación integral de la clínica.',
       },
     ],
     process: [
@@ -1378,7 +1378,7 @@ export const allServices: ServiceData[] = [
     ],
     metaDescription:
       'Presoterapia y Cryopush en Terrassa. Drenaje linfático, recuperación deportiva y reducción del edema. Tratamientos complementarios en Podofisio Clinic.',
-    relatedServices: ['indiba', 'recuperacion-funcional', 'estudio-biomecanico'],
+    relatedServices: ['radiofrecuencia', 'recuperacion-funcional', 'estudio-biomecanico'],
     parentSlug: 'estudio-biomecanico',
     parentTitle: 'Estudio Biomecánico',
   },

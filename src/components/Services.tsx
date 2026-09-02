@@ -31,11 +31,11 @@ const mainServices = [
     image: '/assets/services/03-recuperacion.png',
   },
   {
-    slug: 'indiba',
-    title: 'Indiba',
-    description: 'Radiofrecuencia terapéutica de 448 kHz que acelera la reparación tisular en profundidad sin dolor.',
+    slug: 'radiofrecuencia',
+    title: 'Radiofrecuencia Globus',
+    description: 'Diatermia con Globus DiaCaRe 5000: radiofrecuencia de 300 a 1000 kHz que trabaja los tejidos en profundidad sin dolor.',
     icon: Radio,
-    image: '/assets/services/04-indiba.png',
+    image: '/assets/services/04-radiofrecuencia.png',
   },
   {
     slug: 'quiropodia',
@@ -411,7 +411,7 @@ export default function Services() {
           >
             <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 relative group">
               <img
-                src="/assets/services/04-indiba.png"
+                src="/assets/services/04-radiofrecuencia.png"
                 alt="Technology"
                 className="w-full h-full object-cover grayscale opacity-60 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                 referrerPolicy="no-referrer"

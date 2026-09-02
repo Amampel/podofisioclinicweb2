@@ -34,6 +34,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/servicios/indiba",
+        destination: "/servicios/radiofrecuencia",
+        permanent: true,
+      },
+      {
+        source: "/blog/radiofrecuencia-indiba-fisioterapia",
+        destination: "/blog/radiofrecuencia-diatermia-fisioterapia",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [
           {
