@@ -87,15 +87,15 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "09:00",
-      closes: "20:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:30",
+      closes: "13:30",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Friday"],
-      opens: "09:00",
-      closes: "18:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "15:30",
+      closes: "20:00",
     },
   ],
   medicalSpecialty: ["Podiatry", "PhysicalTherapy"],
