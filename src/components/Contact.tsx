@@ -72,17 +72,23 @@ export default function Contact() {
               </h3>
               <div className="space-y-4">
                 {[
-                  { day: 'Lunes - Jueves', hours: '09:00 - 20:00' },
-                  { day: 'Viernes', hours: '09:00 - 18:00' },
-                  { day: 'Sábado', hours: 'Cerrado' },
-                  { day: 'Domingo', hours: 'Cerrado' }
+                  { day: 'Lunes - Viernes', hours: ['08:30 - 13:30', '15:30 - 20:00'] },
+                  { day: 'Sábado', hours: ['Cerrado'] },
+                  { day: 'Domingo', hours: ['Cerrado'] }
                 ].map((item, idx) => (
-                  <div key={`hours-${idx}-${item.day}`} className="flex justify-between items-center text-sm">
+                  <div key={`hours-${idx}-${item.day}`} className="flex justify-between items-start text-sm gap-4">
                     <span className="text-on-surface-variant font-light">{item.day}</span>
-                    <span className="text-white font-bold">{item.hours}</span>
+                    <span className="text-white font-bold text-right flex flex-col gap-1">
+                      {item.hours.map((slot) => (
+                        <span key={`${item.day}-${slot}`}>{slot}</span>
+                      ))}
+                    </span>
                   </div>
                 ))}
               </div>
+              <p className="mt-6 text-xs text-on-surface-variant font-light">
+                Fines de semana atendemos urgencias bajo petición.
+              </p>
             </motion.div>
 
             <motion.div

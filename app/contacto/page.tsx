@@ -4,7 +4,7 @@ import ContactPage from "../../src/views/ContactPage";
 export const metadata: Metadata = {
   title: "Pide tu Cita - Podología y Fisioterapia en Terrassa",
   description:
-    "Pide cita en Podofisio Clinic Terrassa. Estamos en Plaça de Mossèn Jacint Verdaguer, 1, 08221 Terrassa. Atención por teléfono, WhatsApp o formulario online. Lunes a jueves 9h-20h, viernes 9h-18h.",
+    "Pide cita en Podofisio Clinic Terrassa. Estamos en Plaça de Mossèn Jacint Verdaguer, 1, 08221 Terrassa. Atención por teléfono, WhatsApp o formulario online. Lunes a viernes 8:30-13:30 y 15:30-20h.",
   keywords: [
     "pedir cita podólogo Terrassa",
     "cita fisioterapia Terrassa",
