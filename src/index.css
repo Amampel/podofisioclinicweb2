@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 @theme {
-  --font-headline: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-headline: var(--font-manrope), "Manrope", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
   
   --color-background: #131313;
   --color-surface-lowest: #0e0e0e;
@@ -54,3 +53,28 @@ body.mobile-menu-open .floating-actions-container {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* Páginas legales */
+.legal-content h2 {
+  font-family: var(--font-headline);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.375rem;
+  margin: 3rem 0 1rem;
+}
+.legal-content h3 {
+  font-family: var(--font-headline);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 2rem 0 0.75rem;
+}
+.legal-content p { margin: 0 0 1rem; }
+.legal-content ul { list-style: disc; padding-left: 1.25rem; margin: 0 0 1rem; }
+.legal-content li { margin: 0 0 0.5rem; }
+.legal-content a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.legal-content strong { color: #fff; }
+.legal-content table { width: 100%; border-collapse: collapse; margin: 0 0 1.5rem; font-size: 0.875rem; }
+.legal-content th, .legal-content td { border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem; text-align: left; vertical-align: top; }
+.legal-content th { color: #fff; background: rgba(255,255,255,0.04); font-weight: 600; }
+.legal-content .table-wrap { overflow-x: auto; }

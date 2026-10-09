@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function Footer() {
   return (
@@ -41,11 +42,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* pr-20: deja libre la columna de los botones flotantes (WhatsApp / llamar) */}
+        <div className="pt-8 pr-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <span className="text-sm text-neutral-500">© 2024 Podofisio Clinic. Precision in Motion.</span>
-          <div className="flex gap-8">
-            <a href="#" className="text-xs text-neutral-600 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-neutral-600 hover:text-white transition-colors">Terms of Service</a>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <Link href="/aviso-legal" className="text-xs text-neutral-600 hover:text-white transition-colors">Aviso legal</Link>
+            <Link href="/politica-de-privacidad" className="text-xs text-neutral-600 hover:text-white transition-colors">Política de privacidad</Link>
+            <Link href="/politica-de-cookies" className="text-xs text-neutral-600 hover:text-white transition-colors">Política de cookies</Link>
+            <CookieSettingsButton className="text-xs text-neutral-600 hover:text-white transition-colors" />
           </div>
         </div>
       </div>
