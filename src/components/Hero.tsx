@@ -2,11 +2,14 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import Link from "next/link";
+import { useConsent } from '../lib/consent';
 
 const VIDEO_ID = "AuqCXhA4pVQ";
-const YT_SRC = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+const YT_SRC = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
 
 export default function Hero() {
+  // El vídeo de YouTube solo se carga si el visitante acepta los contenidos de terceros.
+  const consent = useConsent();
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-surface-lowest">
 
@@ -16,6 +19,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background z-10" />
 
         {/* YouTube iframe — covers the full section regardless of screen ratio */}
+        {consent?.multimedia && (
         <iframe
           src={YT_SRC}
           title="Podofisio Clinic background video"
@@ -38,6 +42,7 @@ export default function Hero() {
             border: 'none',
           }}
         />
+        )}
       </div>
 
       {/* Hero Content */}
