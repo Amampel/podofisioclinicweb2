@@ -119,7 +119,7 @@ export default function Page() {
       <p>
         Para cualquier duda sobre el tratamiento de sus datos puede consultar nuestra{" "}
         <Link href="/politica-de-privacidad">política de privacidad</Link> o escribirnos a{" "}
-        <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>.
+        <a href="mailto:podofisioclinic@gmail.com">podofisioclinic@gmail.com</a>.
       </p>
     </LegalPage>
   );

@@ -23,8 +23,9 @@ export default function Page() {
         Titular: PODOFISIO TERRASSA S.L.<br />
         CIF B26723874<br />
         Domicilio: Plaça Mossén Jacint Verdaguer, num, 1, local, 08221, Terrassa<br />
-        Teléfono: 697 657 485<br />
-        Contacto: <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>
+        Inscrita en el Registro Mercantil de Barcelona, hoja B-651375, inscripción 1ª<br />
+        Teléfono: 624 57 87 54<br />
+        Contacto: <a href="mailto:podofisioclinic@gmail.com">podofisioclinic@gmail.com</a>
       </p>
 
       <h2>Condiciones generales de uso</h2>
@@ -187,7 +188,7 @@ export default function Page() {
         El titular del sitio web respeta los derechos de propiedad intelectual e industrial de terceros. Por ello,
         si considera que en nuestro sitio web se están vulnerando sus derechos, rogamos que se ponga en contacto con
         el titular de la página web a través del siguiente correo electrónico:{" "}
-        <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>
+        <a href="mailto:podofisioclinic@gmail.com">podofisioclinic@gmail.com</a>
       </p>
 
       <h2>Exclusión de garantías y responsabilidad</h2>
@@ -270,7 +271,7 @@ export default function Page() {
         usuario. Sin embargo, “Podofisio Clinic” no asume ninguna responsabilidad sobre los contenidos,
         informaciones o servicios que puedan aparecer en dichas páginas web, ya que no realiza una revisión
         exhaustiva de su contenido. En caso de que el usuario considere que un enlace conduce a contenido ilícito,
-        podrá comunicarlo a <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>, sin que dicha
+        podrá comunicarlo a <a href="mailto:podofisioclinic@gmail.com">podofisioclinic@gmail.com</a>, sin que dicha
         comunicación implique una obligación de retirar el enlace.
       </p>
       <p>

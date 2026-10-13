@@ -21,7 +21,7 @@ export default function Page() {
                 PODOFISIO TERRASSA S.L.<br />
                 CIF B26723874<br />
                 Plaça Mossén Jacint Verdaguer, num, 1, local, 08221, Terrassa<br />
-                Telf: 697 657 485
+                Telf: 624 57 87 54
               </td>
             </tr>
             <tr>
@@ -133,7 +133,7 @@ export default function Page() {
       <p>
         Le informamos que PODOFISIO TERRASSA S.L. (en adelante “Podofisio Clinic”) es la titular de la web
         podofisioclinic.com, con CIF B26723874 y dirección en Plaça Mossén Jacint Verdaguer, num, 1, local, 08221,
-        Terrassa. Puede contactar telefónicamente al 697 657 485. El contacto del DPD es{" "}
+        Terrassa. Puede contactar telefónicamente al 624 57 87 54. El contacto del DPD es{" "}
         <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>
       </p>
       <p>
@@ -359,7 +359,7 @@ export default function Page() {
       <p>
         PODOFISIO TERRASSA S.L.<br />
         CIF B26723874<br />
-        <a href="mailto:info@podofisioclinic.com">info@podofisioclinic.com</a>
+        <a href="mailto:podofisioclinic@gmail.com">podofisioclinic@gmail.com</a>
       </p>
       <p>
         Además de los derechos que le asisten, si cree que sus datos no se están recabando o tratando conforme a la
