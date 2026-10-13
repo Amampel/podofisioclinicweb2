@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
+import { Inter, Manrope } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "../src/index.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import FloatingActions from "../src/components/FloatingActions";
+import CookieBanner from "../src/components/CookieBanner";
+
+// next/font descarga las fuentes en el build y las sirve desde el propio dominio:
+// el navegador del visitante no contacta con Google.
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.podofisioclinic.com"),
@@ -130,7 +147,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${manrope.variable} ${inter.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
@@ -141,6 +158,7 @@ export default function RootLayout({
           <main className="flex-grow pt-20">{children}</main>
           <Footer />
           <FloatingActions />
+          <CookieBanner />
           <SpeedInsights />
           <Analytics />
         </div>

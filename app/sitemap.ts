@@ -13,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/nosotros', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/contacto', priority: 0.9, changeFrequency: 'monthly' },
     { url: '/blog', priority: 0.7, changeFrequency: 'weekly' },
+    { url: '/aviso-legal', priority: 0.2, changeFrequency: 'yearly' },
+    { url: '/politica-de-privacidad', priority: 0.2, changeFrequency: 'yearly' },
+    { url: '/politica-de-cookies', priority: 0.2, changeFrequency: 'yearly' },
   ] as const;
 
   const staticSitemap = staticRoutes.map((route) => ({

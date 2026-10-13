@@ -1,8 +1,11 @@
 "use client";
 import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, MessageCircle, Check } from 'lucide-react';
+import { saveConsent, useConsent } from '../lib/consent';
 
 export default function Contact() {
+  // El mapa de Google solo se carga si el visitante acepta los contenidos de terceros.
+  const consent = useConsent();
 
   return (
     <section className="py-32 bg-surface-lowest">
@@ -99,14 +102,30 @@ export default function Contact() {
               className="space-y-4"
             >
               <div className="relative h-[350px] w-full rounded-2xl overflow-hidden glass-card border border-white/5">
-                <iframe
-                  title="Ubicación Podofisio Clinic — Plaça de Mossèn Jacint Verdaguer, 1, Terrassa"
-                  src="https://www.google.com/maps?q=Pla%C3%A7a+de+Mossen+Jacint+Verdaguer+1+08221+Terrassa&output=embed"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full border-0"
-                />
+                {consent?.multimedia ? (
+                  <iframe
+                    title="Ubicación Podofisio Clinic — Plaça de Mossèn Jacint Verdaguer, 1, Terrassa"
+                    src="https://www.google.com/maps?q=Pla%C3%A7a+de+Mossen+Jacint+Verdaguer+1+08221+Terrassa&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full border-0"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
+                    <MapPin className="w-8 h-8 text-secondary" />
+                    <p className="text-sm text-neutral-400 max-w-xs">
+                      El mapa lo proporciona Google y puede instalar cookies. Se mostrará si aceptas los contenidos de terceros.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => saveConsent(true)}
+                      className="border border-outline-variant text-white px-5 py-3 rounded-md font-headline font-bold text-[11px] uppercase tracking-widest hover:bg-white/5 transition-all"
+                    >
+                      Mostrar mapa
+                    </button>
+                  </div>
+                )}
               </div>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+Mossen+Jacint+Verdaguer+1+Terrassa"
